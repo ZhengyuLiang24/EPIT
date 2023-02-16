@@ -38,13 +38,13 @@
 
 
 ## Perspective Comparison
-### <img src="https://raw.github.com/ZhengyuLiang24/EPIT/main/figs/PerspectiveComparison.png" width="1000">
+### <img src="https://raw.github.com/ZhengyuLiang24/EPIT/main/figs/PerspectiveComparison.png" width="400">
 <br>
 
 
 
 ## Effectiveness for Angular SR
-### <img src="https://raw.github.com/ZhengyuLiang24/EPIT/main/figs/AngularSR.png" width="1000">
+### <img src="https://raw.github.com/ZhengyuLiang24/EPIT/main/figs/AngularSR.png" width="400">
 <br>
 
 
