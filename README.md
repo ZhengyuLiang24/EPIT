@@ -1,9 +1,9 @@
 # EPIT
 
 ## Official implementation of "*Learning Non-Local Spatial-Angular Correlation for Light Field Image Super-Resolution*", 2023. 
-[[arXiv]()]
+[[arXiv](https://arxiv.org/abs/2302.08058)]
 
-### <img src="https://raw.github.com/ZhengyuLiang24/EPIT/main/figs/AttributionMaps.png" width="500">
+### <img src="https://raw.github.com/ZhengyuLiang24/EPIT/main/figs/AttributionMaps.png" width="400">
 <br>
 
 
@@ -55,7 +55,7 @@ If you find this work helpful, please consider citing:
 @Article{EPIT,
     author    = {Liang, Zhengyu and Wang, Yingqian and Wang, Longguang and Yang, Jungang and Zhou Shilin and Guo, Yulan},
     title     = {Learning Non-Local Spatial-Angular Correlation for Light Field Image Super-Resolution},
-    journal   = {arXiv preprint arXiv:}, 
+    journal   = {arXiv preprint arXiv:2302.08058}, 
     year      = {2023},   
 }
 ```
