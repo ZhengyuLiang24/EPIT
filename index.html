@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Learning Non-Local Spatial-Angular Correlation for Light Field Image Super-Resolution.">
+  <meta name="keywords" content="Light Field, Image Super Resolution, Transformer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EPIT | ICCV 2023</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/juxtapose.css">
+  <link rel="stylesheet" href="./static/css/tab_gallery.css">
+  <link rel="stylesheet" href="./static/css/image_card_fader.css">
+  <link rel="stylesheet" href="./static/css/image_card_slider.css">
+
+  <link rel="icon" href="./images/panda.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/juxtapose.js"></script>
+  <script src="./static/js/tab_gallery.js"></script>
+  
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://github.com/ZhengyuLiang24">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/ZhengyuLiang24/BasicLFSR">
+            BasicLFSR
+          </a>
+          <a class="navbar-item" href="https://github.com/ZhengyuLiang24/LFT">
+            LFT
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Learning Non-Local Spatial-Angular Correlation for Light Field Image SR</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/ZhengyuLiang24">Zhengyu Liang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://yingqianwang.github.io/">Yingqian Wang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://yingqianwang.github.io/">Longguang Wang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://sofienbouaziz.com">Jungang Yang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.danbgoldman.com">Shilin Zhou</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://homes.cs.washington.edu/~seitz/">Yulan Guo</a><sup>1,2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>National University of Defense Technology,</span>
+            <span class="author-block"><sup>2</sup>Aviation University of Air Force</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2302.08058"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ZhengyuLiang24/EPIT"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+                </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--=================LAM==========================-->
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <div class="content has-text-justified">
+      <!-- <h3 class="title is-4">Overview of the AlignFormer</h3> -->
+      <div style="text-align: center; vertical-align:middle">
+        <img src="./images/LAM.png" width="700">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Exploiting spatial-angular correlation is crucial to light field (LF) image super-resolution (SR), but is highly challenging due to its non-local property caused by the disparities among LF images. Although many deep neural networks (DNNs) have been developed for LF image SR and achieved continuously improved performance, existing methods cannot well leverage the long-range spatial-angular correlation and thus suffer a significant performance drop when handling scenes with large disparity variations. 
+          </p>
+          <p>
+            In this paper, we propose a simple yet effective method to learn the non-local spatial-angular correlation for LF image SR. In our method, we adopt the epipolar plane image (EPI) representation to project the 4D spatial-angular correlation onto multiple 2D EPI planes, and then develop a Transformer network with repetitive self-attention operations to learn the spatial-angular correlation by modeling the dependencies between each pair of EPI pixels. Our method can fully incorporate the information from all angular views while achieving a global receptive field along the epipolar line. 
+          </p>
+          <p>
+            We conduct extensive experiments with insightful visualizations to validate the effectiveness of our method. Comparative results on five public datasets show that our method not only achieves state-of-the-art SR performance but also performs robust to disparity variations. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <br/>
+    <!--=================Method==========================-->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <!-- <h3 class="title is-4">Overview of the AlignFormer</h3> -->
+          <div style="text-align: center; vertical-align:middle">
+            <img src="./images/Overview.png" width="800">
+          </div>
+          <div align="center">
+            <b>Figure 3. Overview of EPIT.</b>
+          </div>
+          <p> </p>
+          <p>
+            In this paper, we propose a simple yet effective method to learn the non-local spatial-angular correlation for LF image SR. In our method, we re-organize 4D LFs as multiple 2D epipolar plane images (EPIs) to manifest the spatial-angular correlation to the line patterns with different slopes. Then, we develop a Transformer-based network called EPIT to learn the spatial-angular correlation by modeling the dependencies between each pair of pixels on EPIs. Specifically, we design a basic Transformer block to alternately process horizontal and vertical EPIs, and thus progressively incorporate the complementary information from all angular views. Compared to existing LF image SR methods, our method can achieve a global receptive field along the epipolar line, and thus performs robust to disparity variations.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <!--=================BasicLFSR==========================-->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">BasicLFSR Benchmark</h2>
+        <div class="content has-text-justified">
+          <!-- <h3 class="title is-4">Overview of the AlignFormer</h3> -->
+          <div style="text-align: center; vertical-align:middle">
+            <img src="./images/BasicLFSR.png" width="1000">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <!--=================LargeDisparity==========================-->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Robustness to Large Disparity Variations</h2>
+        <div class="content has-text-justified">
+          <!-- <h3 class="title is-4">Overview of the AlignFormer</h3> -->
+          <div style="text-align: center; vertical-align:middle">
+            <img src="./images/LargeDisparity.png" width="900">
+          </div>
+          <div align="center">
+            <b>Figure 8. Performance comparison and local attribution maps (LAM) of different SR methods. </b>
+          </div>
+          <p> </p>
+          <p> (1) Except for the single image SR method RCAN, all LF image SR methods suffer a performance drop when the absolute sheared value of LF images increases. 
+            That is because, large sheared values can result in more significant misalignment among LF images, and introduce difficulties in complementary information incorporation; </p>
+          <p> 
+            (2) As the absolute sheared value increases, the performance of existing LF image SR methods is even inferior to RCAN. 
+            The possible reason is that, these methods do not make full use of local spatial information, but rather rely on local angular information from adjacent views.
+            When the sheared value exceeds their receptive fields, the large disparities can make the spatial-angular correlation non-local and thus introduce challenges in complementary information incorporation;</p>
+          </p>
+            (3) Our EPIT performs much more robust to disparity variations and achieves the highest PSNR scores under all sheared values. 
+            More quantitative comparisons on the whole datasets can be referred to the supplemental material.</p>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <!--=================LargeDisparity==========================-->
+    <div class="columns is-centered has-text-centered">
+      <p> </p>
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 ">Quantitative Comparison on Large Disparity Variations</h2>
+      </div>
+    </div>
+
+    <!--=================LargeDisparity==========================-->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <div style="text-align: center; vertical-align:middle">
+            <img src="./images/LargeDisparityX2Curve.png" width="1000">
+          </div>
+          <div align="center">
+            <b>Figure II. Quantitative comparison on five datasets with different shearing values for 2× SR.</b>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--=================LargeDisparity==========================-->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <!-- <h3 class="title is-4">Overview of the AlignFormer</h3> -->
+          <div style="text-align: center; vertical-align:middle">
+            <img src="./images/LargeDisparityX4Curve.png" width="1000">
+          </div>
+          <div align="center">
+            <b>Figure III. Quantitative comparison on five datasets with different shearing values for 4× SR.</b>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<!--=================Teasers==========================-->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <!-- The expanding image container -->
+      <div class="tab_container">
+        <h2 class="title is-3">Visual Results under Sheared Value=4</h2>
+        <!-- Close the image -->
+        <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+
+        <!-- Expanded image -->
+        <div id="juxtapose-embed" data-startingposition="30%" data-animate="true" class="juxtapose"
+          style="height: 800px; width: 800px;">
+          <!-- <div class="jx-slider">
+            
+            <div class="jx-handle " style="left: 50%;">
+              <div class="jx-arrow jx-left"></div>
+              <div class="jx-control">
+                <div class="jx-controller" tabindex="0" role="slider" aria-valuenow="50" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+              <div class="jx-arrow jx-right"></div>
+            </div>
+
+            <div class="jx-image jx-left " style="width: 50%;"><img src="https://iceclear.github.io/projects/stablesr/images/2841_709551_375529full_LQ.png" alt="">
+              <div class="jx-label" tabindex="0">UDC images</div>
+            </div>
+
+            <div class="jx-image jx-right " style="width: 50%;"><img src="https://iceclear.github.io/projects/stablesr/images/building_LQ.png" alt="">
+              <div class="jx-label" tabindex="0">AlignFormer results</div>
+            </div>
+
+            <a href="https://juxtapose.knightlab.com" target="_blank" rel="noopener" class="jx-knightlab">
+              <div class="knightlab-logo"></div><span class="juxtapose-name">JuxtaposeJS</span>
+            </a>
+          </div> -->
+        </div>
+
+        <div>
+          <div id="juxtapose-hidden"></div>
+        </div>
+
+        <!-- Image text -->
+        <div id="imgtext"></div>
+      </div>
+
+      <!-- The grid: four columns -->
+      <div class="tab_row">
+        <div class="tab_column">
+          <img src="./images/VisualResults/buddha_DistgSSR.jpg" onclick="tab_gallery_click('buddha');">
+        </div>
+        <div class="tab_column">
+          <img src="./images/VisualResults/Hublais__Decoded_DistgSSR.jpg" onclick="tab_gallery_click('Hublais__Decoded');">
+        </div>
+        <div class="tab_column">
+          <img src="./images/VisualResults/ISO_Chart_1__Decoded_DistgSSR.jpg" onclick="tab_gallery_click('ISO_Chart_1__Decoded');">
+        </div>
+        <div class="tab_column">
+          <img src="./images/VisualResults/origami_DistgSSR.jpg" onclick="tab_gallery_click('origami');">
+        </div>
+        <div class="tab_column">
+          <img src="./images/VisualResults/Sphynx_DistgSSR.jpg" onclick="tab_gallery_click('Sphynx');">
+        </div>
+        <div class="tab_column">
+          <img src="./images/VisualResults/Tarot Cards S_DistgSSR.jpg" onclick="tab_gallery_click('Tarot Cards S');">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent works that were introduced to LF community by our team.
+          </p>
+          <p>
+            <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Wang_Occlusion-Aware_Cost_Constructor_for_Light_Field_Depth_Estimation_CVPR_2022_paper.pdf">OACCnet, CVPR 2022</a> proposes a fast cost constructor composed by a series of convolutions with
+            specifically designed dilation rates to construct matching cost for LF depth estimation.
+          </p>
+          <p>
+            <a href="https://arxiv.org/pdf/2202.10603.pdf">LF-Distg, TPAMI 2022</a> proposes a generic mechanism to disentangle the spatial and angular information for LF image processing. 
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{liang2023EPIT,
+      author  = {Liang, Zhengyu and Wang, Yingqian and Wang, Longguang and Yang, Jungang and Zhou, Shilin and Guo, Yulan},
+      title   = {Learning Non-Local Spatial-Angular Correlation for Light Field Image Super-Resolution},
+      journal = {ICCV},
+      year    = {2021},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/pdf/2302.08058">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/ZhengyuLiang24" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body>
+</html>
