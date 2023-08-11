@@ -1,17 +1,9 @@
 # EPIT
 
-## Official implementation of "*Learning Non-Local Spatial-Angular Correlation for Light Field Image Super-Resolution*", 2023. 
-[[arXiv](https://arxiv.org/abs/2302.08058)]
+This is the official implementation of "*Learning Non-Local Spatial-Angular Correlation for Light Field Image Super-Resolution*", ICCV 2023. 
 
-### <img src="https://raw.github.com/ZhengyuLiang24/EPIT/main/figs/AttributionMaps.png" width="400">
+[[arXiv](https://arxiv.org/abs/2302.08058)] [[project](https://zhengyuliang24.github.io/EPIT/)]
 <br>
-
-
-## Highlights
-1. We address the importance of exploiting non-local spatial-angular correlation in LF image SR, and propose a simple yet effective method to handle this problem.
-2. We develop a Transformer-based network to learn the non-local spatial-angular correlation from horizontal and vertical EPIs, and validate the effectiveness of our method through extensive experiments and visualizations. 
-3. Compared to existing state-of-the-art LF image SR methods, our method achieves superior performance on public LF datasets, and is much more robust to disparity variations. 
-<br><br>
 
 
 ## Training & Evaluation
@@ -37,25 +29,13 @@
 <br>
 
 
-## Perspective Comparison
-### <img src="https://raw.github.com/ZhengyuLiang24/EPIT/main/figs/PerspectiveComparison.png" width="400">
-<br>
-
-
-
-## Effectiveness for Angular SR
-### <img src="https://raw.github.com/ZhengyuLiang24/EPIT/main/figs/AngularSR.png" width="400">
-<br>
-
-
-
 ## Citiation
 If you find this work helpful, please consider citing:
 ```
-@Article{EPIT,
-    author    = {Liang, Zhengyu and Wang, Yingqian and Wang, Longguang and Yang, Jungang and Zhou Shilin and Guo, Yulan},
+@InProceedings{Liang2023EPIT,
+    author    = {Liang, Zhengyu and Wang, Yingqian and Wang, Longguang and Yang, Jungang and Zhou, Shilin and Guo, Yulan},
     title     = {Learning Non-Local Spatial-Angular Correlation for Light Field Image Super-Resolution},
-    journal   = {arXiv preprint arXiv:2302.08058}, 
+    booktitle = {ICCV}, 
     year      = {2023},   
 }
 ```
@@ -69,6 +49,6 @@ If you find this work helpful, please consider citing:
 
 
 ## Contact
-Welcome to raise issues or email to [zyliang@nudt.edu.cn](zyliang@nudt.edu.cn) for any question regarding our EPIT.
+Welcome to raise issues or email to [zyliang@nudt.edu.cn](zyliang@nudt.edu.cn) for any questions regarding our EPIT.
 
 
