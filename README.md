@@ -2,7 +2,7 @@
 
 This is the official implementation of "*Learning Non-Local Spatial-Angular Correlation for Light Field Image Super-Resolution*", ICCV 2023. 
 
-[[paper]([https://arxiv.org/abs/2302.08058](https://openaccess.thecvf.com/content/ICCV2023/papers/Liang_Learning_Non-Local_Spatial-Angular_Correlation_for_Light_Field_Image_Super-Resolution_ICCV_2023_paper.pdf))] [[arXiv](https://arxiv.org/abs/2302.08058)] [[project](https://zhengyuliang24.github.io/EPIT/)]
+[[paper](https://openaccess.thecvf.com/content/ICCV2023/papers/Liang_Learning_Non-Local_Spatial-Angular_Correlation_for_Light_Field_Image_Super-Resolution_ICCV_2023_paper.pdf)] [[arXiv](https://arxiv.org/abs/2302.08058)] [[project](https://zhengyuliang24.github.io/EPIT/)]
 <br>
 
 
